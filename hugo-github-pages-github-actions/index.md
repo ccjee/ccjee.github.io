@@ -90,3 +90,18 @@ jobs:
 手动开始动作 或 本地重新 commit 后，查看日志
 
 ## 步骤8：访问 https://ccjee.github.io/ 查看效果
+
+## 写`blog`或`修改文件`后常用命令
+```
+# 生成静态文件
+hugo
+
+# 添加所有修改过的文件
+git add .
+
+# 说明这次提交记录
+git commit -m "Add a new post"  
+
+# 将本地的更新，推送到github
+git push -u origin main
+```
