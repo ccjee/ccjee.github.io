@@ -41,3 +41,5 @@ xcopy .\themes\hugo-theme-bootstrap\exampleSite /E  #移动文件
 hugo server #本地运行
 ```
 详情参考[hugo-theme-bootstrap说明文档](https://github.com/razonyang/hugo-theme-bootstrap/blob/master/README.zh-CN.md)
+
+
