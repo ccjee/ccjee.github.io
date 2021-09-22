@@ -9,32 +9,36 @@
 
 ## 数据分析
 
-- [数据化管理](project/data/day1.html)
-- [数据化管理](/project/data/day2.html)
-- [自学数据分析](/project/data/guide.html)
+- [自学数据分析](/guide)
 
 ## 读书笔记
 
-- [《长期有耐心：美团的成长与进化逻辑》——丁西坡](/project/read/meituan.html)
+- [《长期有耐心：美团的成长与进化逻辑》——丁西坡](/meituan)
 
 ## Obsidian笔记
 
-- [我的Obsidian使用方法](/project/obsidian/obsidian.html)
-- [Markdown语法](/project/obsidian/markdown.html)
-- [Obsidian个人知识管理](/project/obsidian/个人知识管理.html)
+- [我的Obsidian使用方法](/obsidian)
+- [Markdown语法](/markdown)
+- [Obsidian个人知识管理](/todo)
 
-## Vuepress
+## blog
 
-- [快速上手Vuepress](/project/blog/快速上手Vuepress.html)
-- [基本配置](/project/blog/基本配置.html)
-- [GitHub部署](/project/blog/GitHub部署.html)
-- [Vuepress踩坑](/project/blog/Vuepress踩坑.html)
+### Vuepress
 
+- [Vuepress快速上手](/快速上手vuepress)
+- [Vuepress基本配置](/基本配置)
+- [Vuepress GitHub部署](/github部署)
+- [Vuepress踩坑](/vuepress踩坑)
+
+### Hugo
+
+- [Hugo快速上手](/快速上手)
+- [Hugo+GitHub Pages+Github Actions自动化部署](/actions自动化部署)
 ## 常用软件
 
-- [Windows 常用软件](/software.html)
+- [Windows 常用软件](/software)
 
 ## 生活
 
-- [记录锅具选择、使用](/project/life/锅具.html)
-- [广州之行](/project/life/广州之行.html)
+- [记录锅具选择、使用](/锅具)
+- [广州之行](/广州之行)
