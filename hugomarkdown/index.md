@@ -42,23 +42,3 @@ toc: #目录导航
   auto: false
 ---
 ```
-### 自定义支持脑图mindmap
-
-自定义属性，文章支持脑图/思维导图
-
-```
-mindmap: true #为true时通过脑图渲染节点
-```
-
-文章中如何写脑图节点：[自定义mind脑图shortcodes](#%E8%87%AA%E5%AE%9A%E4%B9%89mind%E8%84%91%E5%9B%BEshortcodes)
-
-### 自定义支持绘图mermaid
-
-采用mermaid的绘图方案，官方文档：[mermaid绘图帮助文档](https://mermaid-js.github.io/mermaid/)
-
-```
----
-mermaid: true #为true时支持mermaid绘图展示
----
-```
-参考：官方帮助文档：[mermaid绘图帮助文档](https://mermaid-js.github.io/mermaid/#/flowchart)
