@@ -16,7 +16,7 @@
 <meta name="twitter:title" content="Vuepress踩坑"/>
 <meta name="twitter:description" content=""/>
 <meta name="application-name" content="LoveIt">
-<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/logo-2.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://ccjee.github.io/vuepress%E8%B8%A9%E5%9D%91/" /><link rel="prev" href="https://ccjee.github.io/software/" /><link rel="next" href="https://ccjee.github.io/%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/logo-2.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://ccjee.github.io/vuepress%E8%B8%A9%E5%9D%91/" /><link rel="prev" href="https://ccjee.github.io/%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/" /><link rel="next" href="https://ccjee.github.io/obsidian/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -322,189 +322,189 @@
 </span><span class="lnt">182
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">const { fs, path } = require(&#39;@vuepress/shared-utils&#39;)
-
-module.exports = ctx =&gt; ({
-  dest: &#39;../../vuepress&#39;,
-  locales: {
-    &#39;/&#39;: {
-      lang: &#39;en-US&#39;,
-      title: &#39;VuePress&#39;,
-      description: &#39;Vue-powered Static Site Generator&#39;
-    },
-    &#39;/zh/&#39;: {
-      lang: &#39;zh-CN&#39;,
-      title: &#39;VuePress&#39;,
-      description: &#39;Vue 驱动的静态网站生成器&#39;
-    }
-  },
-  head: [
-    [&#39;link&#39;, { rel: &#39;icon&#39;, href: `/logo.png` }],
-    [&#39;link&#39;, { rel: &#39;manifest&#39;, href: &#39;/manifest.json&#39; }],
-    [&#39;meta&#39;, { name: &#39;theme-color&#39;, content: &#39;#3eaf7c&#39; }],
-    [&#39;meta&#39;, { name: &#39;apple-mobile-web-app-capable&#39;, content: &#39;yes&#39; }],
-    [&#39;meta&#39;, { name: &#39;apple-mobile-web-app-status-bar-style&#39;, content: &#39;black&#39; }],
-    [&#39;link&#39;, { rel: &#39;apple-touch-icon&#39;, href: `/icons/apple-touch-icon-152x152.png` }],
-    [&#39;link&#39;, { rel: &#39;mask-icon&#39;, href: &#39;/icons/safari-pinned-tab.svg&#39;, color: &#39;#3eaf7c&#39; }],
-    [&#39;meta&#39;, { name: &#39;msapplication-TileImage&#39;, content: &#39;/icons/msapplication-icon-144x144.png&#39; }],
-    [&#39;meta&#39;, { name: &#39;msapplication-TileColor&#39;, content: &#39;#000000&#39; }]
-  ],
-  theme: &#39;@vuepress/vue&#39;,
-  themeConfig: {
-    repo: &#39;vuejs/vuepress&#39;,
-    editLinks: true,
-    docsDir: &#39;packages/docs/docs&#39;,
-    // #697 Provided by the official algolia team.
-    algolia: ctx.isProd ? ({
-      apiKey: &#39;3a539aab83105f01761a137c61004d85&#39;,
-      indexName: &#39;vuepress&#39;,
-      algoliaOptions: {
-        facetFilters: [&#39;tags:v1&#39;]
-      }
-    }) : null,
-    smoothScroll: true,
-    locales: {
-      &#39;/&#39;: {
-        label: &#39;English&#39;,
-        selectText: &#39;Languages&#39;,
-        ariaLabel: &#39;Select language&#39;,
-        editLinkText: &#39;Edit this page on GitHub&#39;,
-        lastUpdated: &#39;Last Updated&#39;,
-        nav: require(&#39;./nav/en&#39;),
-        sidebar: {
-          &#39;/api/&#39;: getApiSidebar(),
-          &#39;/guide/&#39;: getGuideSidebar(&#39;Guide&#39;, &#39;Advanced&#39;),
-          &#39;/plugin/&#39;: getPluginSidebar(&#39;Plugin&#39;, &#39;Introduction&#39;, &#39;Official Plugins&#39;),
-          &#39;/theme/&#39;: getThemeSidebar(&#39;Theme&#39;, &#39;Introduction&#39;)
-        }
-      },
-      &#39;/zh/&#39;: {
-        label: &#39;简体中文&#39;,
-        selectText: &#39;选择语言&#39;,
-        ariaLabel: &#39;选择语言&#39;,
-        editLinkText: &#39;在 GitHub 上编辑此页&#39;,
-        lastUpdated: &#39;上次更新&#39;,
-        nav: require(&#39;./nav/zh&#39;),
-        sidebar: {
-          &#39;/zh/api/&#39;: getApiSidebar(),
-          &#39;/zh/guide/&#39;: getGuideSidebar(&#39;指南&#39;, &#39;深入&#39;),
-          &#39;/zh/plugin/&#39;: getPluginSidebar(&#39;插件&#39;, &#39;介绍&#39;, &#39;官方插件&#39;),
-          &#39;/zh/theme/&#39;: getThemeSidebar(&#39;主题&#39;, &#39;介绍&#39;)
-        }
-      }
-    }
-  },
-  plugins: [
-    [&#39;@vuepress/back-to-top&#39;, true],
-    [&#39;@vuepress/pwa&#39;, {
-      serviceWorker: true,
-      updatePopup: true
-    }],
-    [&#39;@vuepress/medium-zoom&#39;, true],
-    [&#39;@vuepress/google-analytics&#39;, {
-      ga: &#39;UA-128189152-1&#39;
-    }],
-    [&#39;container&#39;, {
-      type: &#39;vue&#39;,
-      before: &#39;&lt;pre class=&#34;vue-container&#34;&gt;&lt;code&gt;&#39;,
-      after: &#39;&lt;/code&gt;&lt;/pre&gt;&#39;
-    }],
-    [&#39;container&#39;, {
-      type: &#39;upgrade&#39;,
-      before: info =&gt; `&lt;UpgradePath title=&#34;${info}&#34;&gt;`,
-      after: &#39;&lt;/UpgradePath&gt;&#39;
-    }],
-    [&#39;flowchart&#39;]
-  ],
-  extraWatchFiles: [
-    &#39;.vuepress/nav/en.js&#39;,
-    &#39;.vuepress/nav/zh.js&#39;
-  ]
-})
-
-function getApiSidebar () {
-  return [
-    &#39;cli&#39;,
-    &#39;node&#39;
-  ]
-}
-
-function getGuideSidebar (groupA, groupB) {
-  return [
-    {
-      title: groupA,
-      collapsable: false,
-      children: [
-        &#39;&#39;,
-        &#39;getting-started&#39;,
-        &#39;directory-structure&#39;,
-        &#39;basic-config&#39;,
-        &#39;assets&#39;,
-        &#39;markdown&#39;,
-        &#39;using-vue&#39;,
-        &#39;i18n&#39;,
-        &#39;deploy&#39;
-      ]
-    },
-    {
-      title: groupB,
-      collapsable: false,
-      children: [
-        &#39;frontmatter&#39;,
-        &#39;permalinks&#39;,
-        &#39;markdown-slot&#39;,
-        &#39;global-computed&#39;
-      ]
-    }
-  ]
-}
-
-const officalPlugins = fs
-  .readdirSync(path.resolve(__dirname, &#39;../plugin/official&#39;))
-  .map(filename =&gt; &#39;official/&#39; + filename.slice(0, -3))
-  .sort()
-
-function getPluginSidebar (pluginTitle, pluginIntro, officialPluginTitle) {
-  return [
-    {
-      title: pluginTitle,
-      collapsable: false,
-      children: [
-        [&#39;&#39;, pluginIntro],
-        &#39;using-a-plugin&#39;,
-        &#39;writing-a-plugin&#39;,
-        &#39;life-cycle&#39;,
-        &#39;option-api&#39;,
-        &#39;context-api&#39;
-      ]
-    },
-    {
-      title: officialPluginTitle,
-      collapsable: false,
-      children: officalPlugins
-    }
-  ]
-}
-
-function getThemeSidebar (groupA, introductionA) {
-  return [
-    {
-      title: groupA,
-      collapsable: false,
-      sidebarDepth: 2,
-      children: [
-        [&#39;&#39;, introductionA],
-        &#39;using-a-theme&#39;,
-        &#39;writing-a-theme&#39;,
-        &#39;option-api&#39;,
-        &#39;default-theme-config&#39;,
-        &#39;blog-theme&#39;,
-        &#39;inheritance&#39;
-      ]
-    }
-  ]
-}
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">const { fs, path } = require(&#39;@vuepress/shared-utils&#39;)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">module.exports = ctx =&gt; ({
+</span></span><span class="line"><span class="cl">  dest: &#39;../../vuepress&#39;,
+</span></span><span class="line"><span class="cl">  locales: {
+</span></span><span class="line"><span class="cl">    &#39;/&#39;: {
+</span></span><span class="line"><span class="cl">      lang: &#39;en-US&#39;,
+</span></span><span class="line"><span class="cl">      title: &#39;VuePress&#39;,
+</span></span><span class="line"><span class="cl">      description: &#39;Vue-powered Static Site Generator&#39;
+</span></span><span class="line"><span class="cl">    },
+</span></span><span class="line"><span class="cl">    &#39;/zh/&#39;: {
+</span></span><span class="line"><span class="cl">      lang: &#39;zh-CN&#39;,
+</span></span><span class="line"><span class="cl">      title: &#39;VuePress&#39;,
+</span></span><span class="line"><span class="cl">      description: &#39;Vue 驱动的静态网站生成器&#39;
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">  },
+</span></span><span class="line"><span class="cl">  head: [
+</span></span><span class="line"><span class="cl">    [&#39;link&#39;, { rel: &#39;icon&#39;, href: `/logo.png` }],
+</span></span><span class="line"><span class="cl">    [&#39;link&#39;, { rel: &#39;manifest&#39;, href: &#39;/manifest.json&#39; }],
+</span></span><span class="line"><span class="cl">    [&#39;meta&#39;, { name: &#39;theme-color&#39;, content: &#39;#3eaf7c&#39; }],
+</span></span><span class="line"><span class="cl">    [&#39;meta&#39;, { name: &#39;apple-mobile-web-app-capable&#39;, content: &#39;yes&#39; }],
+</span></span><span class="line"><span class="cl">    [&#39;meta&#39;, { name: &#39;apple-mobile-web-app-status-bar-style&#39;, content: &#39;black&#39; }],
+</span></span><span class="line"><span class="cl">    [&#39;link&#39;, { rel: &#39;apple-touch-icon&#39;, href: `/icons/apple-touch-icon-152x152.png` }],
+</span></span><span class="line"><span class="cl">    [&#39;link&#39;, { rel: &#39;mask-icon&#39;, href: &#39;/icons/safari-pinned-tab.svg&#39;, color: &#39;#3eaf7c&#39; }],
+</span></span><span class="line"><span class="cl">    [&#39;meta&#39;, { name: &#39;msapplication-TileImage&#39;, content: &#39;/icons/msapplication-icon-144x144.png&#39; }],
+</span></span><span class="line"><span class="cl">    [&#39;meta&#39;, { name: &#39;msapplication-TileColor&#39;, content: &#39;#000000&#39; }]
+</span></span><span class="line"><span class="cl">  ],
+</span></span><span class="line"><span class="cl">  theme: &#39;@vuepress/vue&#39;,
+</span></span><span class="line"><span class="cl">  themeConfig: {
+</span></span><span class="line"><span class="cl">    repo: &#39;vuejs/vuepress&#39;,
+</span></span><span class="line"><span class="cl">    editLinks: true,
+</span></span><span class="line"><span class="cl">    docsDir: &#39;packages/docs/docs&#39;,
+</span></span><span class="line"><span class="cl">    // #697 Provided by the official algolia team.
+</span></span><span class="line"><span class="cl">    algolia: ctx.isProd ? ({
+</span></span><span class="line"><span class="cl">      apiKey: &#39;3a539aab83105f01761a137c61004d85&#39;,
+</span></span><span class="line"><span class="cl">      indexName: &#39;vuepress&#39;,
+</span></span><span class="line"><span class="cl">      algoliaOptions: {
+</span></span><span class="line"><span class="cl">        facetFilters: [&#39;tags:v1&#39;]
+</span></span><span class="line"><span class="cl">      }
+</span></span><span class="line"><span class="cl">    }) : null,
+</span></span><span class="line"><span class="cl">    smoothScroll: true,
+</span></span><span class="line"><span class="cl">    locales: {
+</span></span><span class="line"><span class="cl">      &#39;/&#39;: {
+</span></span><span class="line"><span class="cl">        label: &#39;English&#39;,
+</span></span><span class="line"><span class="cl">        selectText: &#39;Languages&#39;,
+</span></span><span class="line"><span class="cl">        ariaLabel: &#39;Select language&#39;,
+</span></span><span class="line"><span class="cl">        editLinkText: &#39;Edit this page on GitHub&#39;,
+</span></span><span class="line"><span class="cl">        lastUpdated: &#39;Last Updated&#39;,
+</span></span><span class="line"><span class="cl">        nav: require(&#39;./nav/en&#39;),
+</span></span><span class="line"><span class="cl">        sidebar: {
+</span></span><span class="line"><span class="cl">          &#39;/api/&#39;: getApiSidebar(),
+</span></span><span class="line"><span class="cl">          &#39;/guide/&#39;: getGuideSidebar(&#39;Guide&#39;, &#39;Advanced&#39;),
+</span></span><span class="line"><span class="cl">          &#39;/plugin/&#39;: getPluginSidebar(&#39;Plugin&#39;, &#39;Introduction&#39;, &#39;Official Plugins&#39;),
+</span></span><span class="line"><span class="cl">          &#39;/theme/&#39;: getThemeSidebar(&#39;Theme&#39;, &#39;Introduction&#39;)
+</span></span><span class="line"><span class="cl">        }
+</span></span><span class="line"><span class="cl">      },
+</span></span><span class="line"><span class="cl">      &#39;/zh/&#39;: {
+</span></span><span class="line"><span class="cl">        label: &#39;简体中文&#39;,
+</span></span><span class="line"><span class="cl">        selectText: &#39;选择语言&#39;,
+</span></span><span class="line"><span class="cl">        ariaLabel: &#39;选择语言&#39;,
+</span></span><span class="line"><span class="cl">        editLinkText: &#39;在 GitHub 上编辑此页&#39;,
+</span></span><span class="line"><span class="cl">        lastUpdated: &#39;上次更新&#39;,
+</span></span><span class="line"><span class="cl">        nav: require(&#39;./nav/zh&#39;),
+</span></span><span class="line"><span class="cl">        sidebar: {
+</span></span><span class="line"><span class="cl">          &#39;/zh/api/&#39;: getApiSidebar(),
+</span></span><span class="line"><span class="cl">          &#39;/zh/guide/&#39;: getGuideSidebar(&#39;指南&#39;, &#39;深入&#39;),
+</span></span><span class="line"><span class="cl">          &#39;/zh/plugin/&#39;: getPluginSidebar(&#39;插件&#39;, &#39;介绍&#39;, &#39;官方插件&#39;),
+</span></span><span class="line"><span class="cl">          &#39;/zh/theme/&#39;: getThemeSidebar(&#39;主题&#39;, &#39;介绍&#39;)
+</span></span><span class="line"><span class="cl">        }
+</span></span><span class="line"><span class="cl">      }
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">  },
+</span></span><span class="line"><span class="cl">  plugins: [
+</span></span><span class="line"><span class="cl">    [&#39;@vuepress/back-to-top&#39;, true],
+</span></span><span class="line"><span class="cl">    [&#39;@vuepress/pwa&#39;, {
+</span></span><span class="line"><span class="cl">      serviceWorker: true,
+</span></span><span class="line"><span class="cl">      updatePopup: true
+</span></span><span class="line"><span class="cl">    }],
+</span></span><span class="line"><span class="cl">    [&#39;@vuepress/medium-zoom&#39;, true],
+</span></span><span class="line"><span class="cl">    [&#39;@vuepress/google-analytics&#39;, {
+</span></span><span class="line"><span class="cl">      ga: &#39;UA-128189152-1&#39;
+</span></span><span class="line"><span class="cl">    }],
+</span></span><span class="line"><span class="cl">    [&#39;container&#39;, {
+</span></span><span class="line"><span class="cl">      type: &#39;vue&#39;,
+</span></span><span class="line"><span class="cl">      before: &#39;&lt;pre class=&#34;vue-container&#34;&gt;&lt;code&gt;&#39;,
+</span></span><span class="line"><span class="cl">      after: &#39;&lt;/code&gt;&lt;/pre&gt;&#39;
+</span></span><span class="line"><span class="cl">    }],
+</span></span><span class="line"><span class="cl">    [&#39;container&#39;, {
+</span></span><span class="line"><span class="cl">      type: &#39;upgrade&#39;,
+</span></span><span class="line"><span class="cl">      before: info =&gt; `&lt;UpgradePath title=&#34;${info}&#34;&gt;`,
+</span></span><span class="line"><span class="cl">      after: &#39;&lt;/UpgradePath&gt;&#39;
+</span></span><span class="line"><span class="cl">    }],
+</span></span><span class="line"><span class="cl">    [&#39;flowchart&#39;]
+</span></span><span class="line"><span class="cl">  ],
+</span></span><span class="line"><span class="cl">  extraWatchFiles: [
+</span></span><span class="line"><span class="cl">    &#39;.vuepress/nav/en.js&#39;,
+</span></span><span class="line"><span class="cl">    &#39;.vuepress/nav/zh.js&#39;
+</span></span><span class="line"><span class="cl">  ]
+</span></span><span class="line"><span class="cl">})
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">function getApiSidebar () {
+</span></span><span class="line"><span class="cl">  return [
+</span></span><span class="line"><span class="cl">    &#39;cli&#39;,
+</span></span><span class="line"><span class="cl">    &#39;node&#39;
+</span></span><span class="line"><span class="cl">  ]
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">function getGuideSidebar (groupA, groupB) {
+</span></span><span class="line"><span class="cl">  return [
+</span></span><span class="line"><span class="cl">    {
+</span></span><span class="line"><span class="cl">      title: groupA,
+</span></span><span class="line"><span class="cl">      collapsable: false,
+</span></span><span class="line"><span class="cl">      children: [
+</span></span><span class="line"><span class="cl">        &#39;&#39;,
+</span></span><span class="line"><span class="cl">        &#39;getting-started&#39;,
+</span></span><span class="line"><span class="cl">        &#39;directory-structure&#39;,
+</span></span><span class="line"><span class="cl">        &#39;basic-config&#39;,
+</span></span><span class="line"><span class="cl">        &#39;assets&#39;,
+</span></span><span class="line"><span class="cl">        &#39;markdown&#39;,
+</span></span><span class="line"><span class="cl">        &#39;using-vue&#39;,
+</span></span><span class="line"><span class="cl">        &#39;i18n&#39;,
+</span></span><span class="line"><span class="cl">        &#39;deploy&#39;
+</span></span><span class="line"><span class="cl">      ]
+</span></span><span class="line"><span class="cl">    },
+</span></span><span class="line"><span class="cl">    {
+</span></span><span class="line"><span class="cl">      title: groupB,
+</span></span><span class="line"><span class="cl">      collapsable: false,
+</span></span><span class="line"><span class="cl">      children: [
+</span></span><span class="line"><span class="cl">        &#39;frontmatter&#39;,
+</span></span><span class="line"><span class="cl">        &#39;permalinks&#39;,
+</span></span><span class="line"><span class="cl">        &#39;markdown-slot&#39;,
+</span></span><span class="line"><span class="cl">        &#39;global-computed&#39;
+</span></span><span class="line"><span class="cl">      ]
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">  ]
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">const officalPlugins = fs
+</span></span><span class="line"><span class="cl">  .readdirSync(path.resolve(__dirname, &#39;../plugin/official&#39;))
+</span></span><span class="line"><span class="cl">  .map(filename =&gt; &#39;official/&#39; + filename.slice(0, -3))
+</span></span><span class="line"><span class="cl">  .sort()
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">function getPluginSidebar (pluginTitle, pluginIntro, officialPluginTitle) {
+</span></span><span class="line"><span class="cl">  return [
+</span></span><span class="line"><span class="cl">    {
+</span></span><span class="line"><span class="cl">      title: pluginTitle,
+</span></span><span class="line"><span class="cl">      collapsable: false,
+</span></span><span class="line"><span class="cl">      children: [
+</span></span><span class="line"><span class="cl">        [&#39;&#39;, pluginIntro],
+</span></span><span class="line"><span class="cl">        &#39;using-a-plugin&#39;,
+</span></span><span class="line"><span class="cl">        &#39;writing-a-plugin&#39;,
+</span></span><span class="line"><span class="cl">        &#39;life-cycle&#39;,
+</span></span><span class="line"><span class="cl">        &#39;option-api&#39;,
+</span></span><span class="line"><span class="cl">        &#39;context-api&#39;
+</span></span><span class="line"><span class="cl">      ]
+</span></span><span class="line"><span class="cl">    },
+</span></span><span class="line"><span class="cl">    {
+</span></span><span class="line"><span class="cl">      title: officialPluginTitle,
+</span></span><span class="line"><span class="cl">      collapsable: false,
+</span></span><span class="line"><span class="cl">      children: officalPlugins
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">  ]
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">function getThemeSidebar (groupA, introductionA) {
+</span></span><span class="line"><span class="cl">  return [
+</span></span><span class="line"><span class="cl">    {
+</span></span><span class="line"><span class="cl">      title: groupA,
+</span></span><span class="line"><span class="cl">      collapsable: false,
+</span></span><span class="line"><span class="cl">      sidebarDepth: 2,
+</span></span><span class="line"><span class="cl">      children: [
+</span></span><span class="line"><span class="cl">        [&#39;&#39;, introductionA],
+</span></span><span class="line"><span class="cl">        &#39;using-a-theme&#39;,
+</span></span><span class="line"><span class="cl">        &#39;writing-a-theme&#39;,
+</span></span><span class="line"><span class="cl">        &#39;option-api&#39;,
+</span></span><span class="line"><span class="cl">        &#39;default-theme-config&#39;,
+</span></span><span class="line"><span class="cl">        &#39;blog-theme&#39;,
+</span></span><span class="line"><span class="cl">        &#39;inheritance&#39;
+</span></span><span class="line"><span class="cl">      ]
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">  ]
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="插件配置">插件配置</h2>
 <p>暂时最优解使用默认主题，使用主题自带的插件进行配置
@@ -531,14 +531,14 @@ function getThemeSidebar (groupA, introductionA) {
         </section>
     </div>
 
-    <div class="post-nav"><a href="/software/" class="prev" rel="prev" title="Windows 常用软件"><i class="fas fa-angle-left fa-fw"></i>Windows 常用软件</a>
-            <a href="/%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/" class="next" rel="next" title="vuepress基本配置">vuepress基本配置<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/" class="prev" rel="prev" title="vuepress基本配置"><i class="fas fa-angle-left fa-fw"></i>vuepress基本配置</a>
+            <a href="/obsidian/" class="next" rel="next" title="obsidian笔记">obsidian笔记<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.88.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.101.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://ccjee.github.io" target="_blank">CCJEE</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>

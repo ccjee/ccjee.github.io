@@ -25,7 +25,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/ccjee.github.io\/hugomarkdown\/"
-        },"image": ["https:\/\/ccjee.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Markdown","wordcount":  489 ,
+        },"image": ["https:\/\/ccjee.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Markdown","wordcount":  251 ,
         "url": "https:\/\/ccjee.github.io\/hugomarkdown\/","datePublished": "2021-09-01T21:57:40+08:00","dateModified": "2021-09-01T21:57:40+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "https:\/\/ccjee.github.io\/images\/avatar.png"},"author": {
@@ -116,7 +116,7 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Hugo Markdown</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://ccjee.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>ccjee</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/obsidian/"><i class="far fa-folder fa-fw"></i>obsidian</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-09-01">2021-09-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 489 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-09-01">2021-09-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 251 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/hugomarkdown/" class="leancloud_visitors" data-flag-title="Hugo Markdown">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -149,8 +149,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">hugo server
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">hugo server
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="front-matter">Front Matter</h2>
 <p><a href="https://www.gohugo.org/doc/content/front-matter/" target="_blank" rel="noopener noreffer">官方文档Front Matter</a></p>
@@ -181,29 +181,29 @@
 </span><span class="lnt">22
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
-</span><span class="w"></span><span class="nt">weight</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">  </span><span class="c">#权重排序</span><span class="w">
-</span><span class="w"></span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;文章标题&#34;</span><span class="w">  </span><span class="c">#标题</span><span class="w">
-</span><span class="w"></span><span class="nt">date</span><span class="p">:</span><span class="w"> </span><span class="ld">2021-09-11T21:57:40</span><span class="m">+08</span><span class="p">:</span><span class="m">00</span><span class="w">  </span><span class="c">#日期</span><span class="w">
-</span><span class="w"></span><span class="nt">lastmod</span><span class="p">:</span><span class="w"> </span><span class="ld">2021-09-14T16:45:40</span><span class="m">+08</span><span class="p">:</span><span class="m">00</span><span class="w"> </span><span class="c">#更新日期</span><span class="w">
-</span><span class="w"></span><span class="nt">draft</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="c">#表示是否是草稿，编辑完成后请将其改为 false</span><span class="w">
-</span><span class="w"></span><span class="nt">author</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;ccjee&#34;</span><span class="w"> </span><span class="c">#作者</span><span class="w">
-</span><span class="w"></span><span class="nt">authorLink</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;https://dillonzq.com&#34;</span><span class="w"> </span><span class="c">#作者链接</span><span class="w">
-</span><span class="w"></span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;内容描述&#34;</span><span class="w"> </span><span class="c">#内容描述</span><span class="w">
-</span><span class="w"></span><span class="nt">resources</span><span class="p">:</span><span class="w">
-</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;featured-image&#34;</span><span class="w">
-</span><span class="w">  </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;featured-image.png&#34;</span><span class="w">
-</span><span class="w"></span><span class="nt">tags</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;Markdown&#34;</span><span class="p">,</span><span class="s2">&#34;blog&#34;</span><span class="p">,</span><span class="s2">&#34;hugo&#34;</span><span class="p">,</span><span class="s2">&#34;GitHub Pages&#34;</span><span class="p">,</span><span class="s2">&#34;Github Actions&#34;</span><span class="p">]</span><span class="w"> </span><span class="c">#标签</span><span class="w">
-</span><span class="w"></span><span class="nt">categories</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;编程&#34;</span><span class="p">]</span><span class="w"> </span><span class="c">#分类</span><span class="w">
-</span><span class="w"></span><span class="nt">keywords</span><span class="p">:</span><span class="w"> </span><span class="c">#关键词</span><span class="w">
-</span><span class="w"></span>- <span class="l">关键词</span><span class="w">
-</span><span class="w"></span><span class="nt">showless</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">  </span><span class="c">#设置部分内容可访问</span><span class="w">
-</span><span class="w"></span><span class="nt">mermaid</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c">#为true时通过脑图渲染节点</span><span class="w">
-</span><span class="w"></span><span class="nt">lightgallery</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c">#支持触屏滑动的响应式相册</span><span class="w">
-</span><span class="w"></span><span class="nt">toc</span><span class="p">:</span><span class="w"> </span><span class="c">#目录导航</span><span class="w">
-</span><span class="w">  </span><span class="nt">auto</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-</span><span class="w"></span><span class="nn">---</span><span class="w">
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nn">---</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">weight</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">  </span><span class="c">#权重排序</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;文章标题&#34;</span><span class="w">  </span><span class="c">#标题</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">date</span><span class="p">:</span><span class="w"> </span><span class="ld">2021-09-11T21:57:40</span><span class="m">+08</span><span class="p">:</span><span class="m">00</span><span class="w">  </span><span class="c">#日期</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">lastmod</span><span class="p">:</span><span class="w"> </span><span class="ld">2021-09-14T16:45:40</span><span class="m">+08</span><span class="p">:</span><span class="m">00</span><span class="w"> </span><span class="c">#更新日期</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">draft</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="c">#表示是否是草稿，编辑完成后请将其改为 false</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">author</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;ccjee&#34;</span><span class="w"> </span><span class="c">#作者</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">authorLink</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;https://dillonzq.com&#34;</span><span class="w"> </span><span class="c">#作者链接</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;内容描述&#34;</span><span class="w"> </span><span class="c">#内容描述</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">resources</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;featured-image&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;featured-image.png&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">tags</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;Markdown&#34;</span><span class="p">,</span><span class="s2">&#34;blog&#34;</span><span class="p">,</span><span class="s2">&#34;hugo&#34;</span><span class="p">,</span><span class="s2">&#34;GitHub Pages&#34;</span><span class="p">,</span><span class="s2">&#34;Github Actions&#34;</span><span class="p">]</span><span class="w"> </span><span class="c">#标签</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">categories</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;编程&#34;</span><span class="p">]</span><span class="w"> </span><span class="c">#分类</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">keywords</span><span class="p">:</span><span class="w"> </span><span class="c">#关键词</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="l">关键词</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">showless</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">  </span><span class="c">#设置部分内容可访问</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">mermaid</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c">#为true时通过脑图渲染节点</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">lightgallery</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c">#支持触屏滑动的响应式相册</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">toc</span><span class="p">:</span><span class="w"> </span><span class="c">#目录导航</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">auto</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nn">---</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
@@ -235,7 +235,7 @@
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.88.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.101.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://ccjee.github.io" target="_blank">CCJEE</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>

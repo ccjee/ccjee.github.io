@@ -182,21 +182,21 @@
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"># 选取目录（建议非系统盘）
-d:
-
-# 创建存放github克隆到本地文件的文件夹
-mkdir ccjee_source
-
-# 进入ccjee_source文件夹
-cd ccjee_source
-
-# 克隆 ccjee.github.io.source 仓库
-git clone git@github.com:ccjee/ccjee.github.io.source.git
-
-# 进入仓库
-cd ccjee.github.io.source/ 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># 选取目录（建议非系统盘）
+</span></span><span class="line"><span class="cl">d:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 创建存放github克隆到本地文件的文件夹
+</span></span><span class="line"><span class="cl">mkdir ccjee_source
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 进入ccjee_source文件夹
+</span></span><span class="line"><span class="cl">cd ccjee_source
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 克隆 ccjee.github.io.source 仓库
+</span></span><span class="line"><span class="cl">git clone git@github.com:ccjee/ccjee.github.io.source.git
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 进入仓库
+</span></span><span class="line"><span class="cl">cd ccjee.github.io.source/ 
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="步骤4生成-hugo-源码并进行配置">步骤4：生成 Hugo 源码并进行配置</h2>
 <div class="highlight"><div class="chroma">
@@ -208,12 +208,12 @@ cd ccjee.github.io.source/
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"># 在ccjee.github.io.source目录下生成 Hugo 源码
-hugo new site . 
-
-# 本地运行预览
-hugo serve
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># 在ccjee.github.io.source目录下生成 Hugo 源码
+</span></span><span class="line"><span class="cl">hugo new site . 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 本地运行预览
+</span></span><span class="line"><span class="cl">hugo serve
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="步骤5推送-github-仓库即ccjeegithubiosource">步骤5：推送 Github 仓库(即ccjee.github.io.source)</h2>
 <div class="highlight"><div class="chroma">
@@ -223,10 +223,10 @@ hugo serve
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">git add .
-git commit -m &#34;first commit&#34;
-git push -u origin main
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git add .
+</span></span><span class="line"><span class="cl">git commit -m &#34;first commit&#34;
+</span></span><span class="line"><span class="cl">git push -u origin main
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="步骤6配置-ccjeegithubiosource-仓库的-github-actions">步骤6：配置 ccjee.github.io.source 仓库的 Github Actions</h2>
 <p>复制以下内容覆盖原内容,修改远程仓库、分支名称即可</p>
@@ -267,40 +267,40 @@ git push -u origin main
 </span><span class="lnt">33
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">name: Deploy Hugo Site to Github Pages on Master Branch
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  build-deploy:
-    runs-on: ubuntu-18.04
-    steps:
-      - uses: actions/checkout@v1  # v2 does not have submodules option now
-       # with:
-       #   submodules: true
-
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: &#39;0.62.2&#39;
-          # extended: true
-
-      - name: Build
-        run: hugo --minify
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }} 
-          external_repository: ccjee/ccjee.github.io
-          publish_dir: &#34;&#34;
-          keep_files: false # remove existing files
-          publish_branch: main  # deploying branch
-          commit_message: ${{ github.event.head_commit.message }}
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">name: Deploy Hugo Site to Github Pages on Master Branch
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">on:
+</span></span><span class="line"><span class="cl">  push:
+</span></span><span class="line"><span class="cl">    branches:
+</span></span><span class="line"><span class="cl">      - main
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">jobs:
+</span></span><span class="line"><span class="cl">  build-deploy:
+</span></span><span class="line"><span class="cl">    runs-on: ubuntu-18.04
+</span></span><span class="line"><span class="cl">    steps:
+</span></span><span class="line"><span class="cl">      - uses: actions/checkout@v1  # v2 does not have submodules option now
+</span></span><span class="line"><span class="cl">       # with:
+</span></span><span class="line"><span class="cl">       #   submodules: true
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      - name: Setup Hugo
+</span></span><span class="line"><span class="cl">        uses: peaceiris/actions-hugo@v2
+</span></span><span class="line"><span class="cl">        with:
+</span></span><span class="line"><span class="cl">          hugo-version: &#39;0.62.2&#39;
+</span></span><span class="line"><span class="cl">          # extended: true
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      - name: Build
+</span></span><span class="line"><span class="cl">        run: hugo --minify
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      - name: Deploy
+</span></span><span class="line"><span class="cl">        uses: peaceiris/actions-gh-pages@v3
+</span></span><span class="line"><span class="cl">        with:
+</span></span><span class="line"><span class="cl">          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }} 
+</span></span><span class="line"><span class="cl">          external_repository: ccjee/ccjee.github.io
+</span></span><span class="line"><span class="cl">          publish_dir: &#34;&#34;
+</span></span><span class="line"><span class="cl">          keep_files: false # remove existing files
+</span></span><span class="line"><span class="cl">          publish_branch: main  # deploying branch
+</span></span><span class="line"><span class="cl">          commit_message: ${{ github.event.head_commit.message }}
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="步骤7检查-github-actions-自动部署">步骤7：检查 Github Actions 自动部署</h2>
 <p>手动开始动作 或 本地重新 commit 后，查看日志</p>
@@ -321,18 +321,18 @@ jobs:
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"># 生成静态文件
-hugo
-
-# 添加所有修改过的文件
-git add .
-
-# 说明这次提交记录
-git commit -m &#34;Add a new post&#34;  
-
-# 将本地的更新，推送到github
-git push -u origin main
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># 生成静态文件
+</span></span><span class="line"><span class="cl">hugo
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 添加所有修改过的文件
+</span></span><span class="line"><span class="cl">git add .
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 说明这次提交记录
+</span></span><span class="line"><span class="cl">git commit -m &#34;Add a new post&#34;  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 将本地的更新，推送到github
+</span></span><span class="line"><span class="cl">git push -u origin main
+</span></span></code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
@@ -364,7 +364,7 @@ git push -u origin main
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.88.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.101.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://ccjee.github.io" target="_blank">CCJEE</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
